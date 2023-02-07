@@ -76,6 +76,9 @@
         display: inline-flex;
         align-items: center;
         cursor: pointer;
+        padding: 30px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
     .check:checked ~ .menu{
         max-height: 100%;
