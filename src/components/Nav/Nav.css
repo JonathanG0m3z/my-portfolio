@@ -5,8 +5,11 @@
     justify-content: space-between;
     background-color: #333;
     padding: 1rem 2rem;
-    color: #fff;
+    color: #f8f9fa;
     font-family: "Quicksand";
+    position: fixed;
+    width: 96.5%;
+    top: 0;
   }
   
   .navbar-brand {
@@ -25,7 +28,7 @@
   }
   
   .nav-link {
-    color: #fff;
+    color: #f8f9fa;
     text-decoration: none;
     font-weight: bold;
     transition: all 0.2s;
@@ -34,7 +37,7 @@
   }
   .nav-link:hover {
     color: #333;
-    background-color: #fff;
+    background-color: #f8f9fa;
     border-radius: 5px;
     padding: 0.5rem;
   }
@@ -77,4 +80,56 @@
     .check:checked ~ .menu{
         max-height: 100%;
     }
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input[type="checkbox"] {
+  display: none;
+}
+
+.switch label {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2176ff;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.switch input[type="checkbox"]:checked + label {
+  background-color: #fb8500;
+}
+
+.switch label:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #f8f9fa;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.switch input[type="checkbox"]:checked + label:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.switch h1{
+  margin-left: 78px;
+}
+.languages{
+  font-weight: bold;
 }
