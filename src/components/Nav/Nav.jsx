@@ -24,7 +24,7 @@ function Navbar({language, setLanguage}) {
               <a className="nav-link" href="#home">{language==='EN'?'Home':'Inicio'}</a>
               <a className="nav-link" href="#about">{language==='EN'?'About':'Acerca'}</a>
               <a className="nav-link" href="#skills">{language==='EN'?'Skills':'Habilidades'}</a>
-              <a className="nav-link" href="#">{language==='EN'?'Contact':'Contacto'}</a>
+              <a className="nav-link" href="#contact">{language==='EN'?'Contact':'Contacto'}</a>
         </div>
       </div>
     </nav>

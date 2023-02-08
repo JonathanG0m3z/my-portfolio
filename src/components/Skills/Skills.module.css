@@ -14,3 +14,12 @@
     flex-wrap: wrap;
     padding: 10px;
 }
+.tittle{
+    font-family: "Quicksand";
+    font-weight: bold;
+    color: #fca311;
+    padding-top: 15px;
+}
+.container label{
+    color: #fca311;
+}

@@ -4,15 +4,15 @@
     width: 300px;
     text-align: center;
     align-items: center;
+    margin-bottom: 25px;
 }
 .container img{
-    width: 250px;
-    height: 250px;
-}
-.container label{
-    font-family: "Quicksand";
-    font-weight: bold;
-    font-size: 18px;
-    color: #f5f5f5;
+    width: 180px;
+    height: 180px;
 }
 .container:hover img {-webkit-transform:scale(1.1);transform:scale(1.1);}
+.container label{
+    font-family: "Quicksand";
+    font-weight: 100;
+    font-size: 25px;
+}

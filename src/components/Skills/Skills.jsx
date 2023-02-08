@@ -20,7 +20,7 @@ export default function Skills({language}){
         <div className={styles.container}>
             <a name="skills"></a>
             <div>
-                <h1>{language==='EN'?'Skills':'Habilidades'}</h1>
+                <h1 className={styles.tittle}>{language==='EN'?'Skills':'Habilidades'}</h1>
             </div>
             <div className={styles.container2}>
                 {list.map(skill=><Skill name={skill} img={skills[skill]}/>)}
