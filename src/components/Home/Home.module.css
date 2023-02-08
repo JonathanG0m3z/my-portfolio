@@ -6,11 +6,11 @@
   color: #fca311;
   font-family: "Quicksand";
   background-image: url('../../img/homeImg2.jpg');
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 .divImg{
     width: 50%;
-    margin-top: 20px;
+    margin-top: 10%;
 }
 .divImg img{
     width: 50%;
@@ -19,6 +19,7 @@
 }
 .divName{
     padding: 5px;
+    width: 50%;
 }
 .divName h1{
     font-style: italic;
@@ -26,7 +27,7 @@
 }
 .divName h2{
     font-size: 35px;
-    font-weight: bold;
+    font-weight: 100;
 }
 @media (max-width: 767px) {
     .container {
@@ -51,9 +52,9 @@
     }
   }
 .about{
-  text-align: left;
-  margin-left: 15px;
+  text-align: justify;
   font-size: 24px;
+  padding: 20px;
 }
 .about p{
   font-size: 30px;
