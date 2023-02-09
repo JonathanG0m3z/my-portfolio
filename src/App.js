@@ -17,7 +17,7 @@ function App() {
         <Nav language={language} setLanguage={setLanguage} />
         <Home language={language} />
         <Skills language={language} />
-        <Projects language={language} />
+        {/* <Projects language={language} /> */}
         <Contact language={language} />
       </BrowserRouter>
     </div>
