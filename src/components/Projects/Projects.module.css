@@ -1,0 +1,11 @@
+.container{
+    /* background-color: #fff; */
+    width: 98%;
+    height: auto;
+    margin: auto;
+    border-radius: 30px;
+    font-family: "Quicksand";
+    font-weight: bold;
+    font-size: 24px;
+    color: #fca311;
+}

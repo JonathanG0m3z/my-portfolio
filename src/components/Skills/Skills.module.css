@@ -4,10 +4,10 @@
     height: auto;
     margin: auto;
     border-radius: 30px;
-    color: #f5f5f5;
     font-family: "Quicksand";
     font-weight: bold;
     font-size: 24px;
+    margin-bottom: 30px;
 }
 .container2{
     display: flex;
@@ -17,9 +17,11 @@
 }
 .tittle{
     font-family: "Quicksand";
-    font-weight: bold;
     color: #fca311;
-    padding-top: 15px;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
 }
 .container label{
     color: #fca311;
