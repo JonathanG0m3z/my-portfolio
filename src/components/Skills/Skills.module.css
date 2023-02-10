@@ -1,5 +1,5 @@
 .container{
-    background-color: #636363;
+    background-color: rgba(99, 99, 99, 0.5);
     width: 98%;
     height: auto;
     margin: auto;
@@ -8,6 +8,7 @@
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 30px;
+    backdrop-filter: blur(1px);
 }
 .container2{
     display: flex;

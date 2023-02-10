@@ -10,7 +10,7 @@
 }
 .divImg{
     width: 50%;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 .divImg img{
     width: 50%;
@@ -28,6 +28,7 @@
 .divName h2{
     font-size: 35px;
     font-weight: 100;
+    font-style: italic;
 }
 @media (max-width: 767px) {
     .container {
