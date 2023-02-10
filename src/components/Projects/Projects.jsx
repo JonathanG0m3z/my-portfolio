@@ -2,10 +2,12 @@ import styles from './Projects.module.css';
 import Project from '../Project/Project';
 import dogs from '../../img/dog.png';
 import rym from '../../img/rickandmorty.png';
+import php from '../../img/php.png';
 
 export default function Projects({language}){
     const projects = [{name: "PI Dogs", code:"https://github.com/JonathanG0m3z/PI-Dogs", deploy:"https://dogs-jongom.netlify.app", src: dogs},  
-                    {name: language==='EN'?"Rick and morty":"Rick y morty", code:"https://github.com/JonathanG0m3z/rick_and_morty_App", deploy:"https://rickandmorty-jongom.netlify.app", src: rym}];
+                    {name: language==='EN'?"Rick and morty":"Rick y morty", code:"https://github.com/JonathanG0m3z/rick_and_morty_App", deploy:"https://rickandmorty-jongom.netlify.app", src: rym},
+                    {name: "MyCliente", code:"https://github.com/JonathanG0m3z/mycliente", deploy:"http://mycliente.rf.gd/", src: php}];
     return(
         <>
             <a name="projects"></a>

@@ -88,8 +88,8 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 58px;
+  height: 32px;
 }
 
 .switch input[type="checkbox"] {
@@ -116,8 +116,8 @@
 .switch label:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 24px;
+  width: 24px;
   left: 4px;
   bottom: 4px;
   background-color: #f8f9fa;
@@ -136,5 +136,6 @@
 }
 .languages{
   font-weight: bold;
-  padding: 15px;
+  padding: 10px;
+  vertical-align: top;
 }
