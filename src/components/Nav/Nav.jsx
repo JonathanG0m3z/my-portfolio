@@ -1,11 +1,14 @@
 import React from "react";
 import './Nav.css';
 import { HiOutlineMenu } from 'react-icons/hi';
+import englishCv from '../../cv/Cv-EN.pdf';
+import spanishCv from '../../cv/Cv-ES.pdf';
 
 function Navbar({language, setLanguage}) {
   const handleLanguage = ()=>{
     setLanguage(language==='EN'?'ES':'EN');
   };
+  const cv = language==='EN'?englishCv:spanishCv;
   return (
     <nav className="navbar">
       <div>
@@ -26,6 +29,9 @@ function Navbar({language, setLanguage}) {
               <a className="nav-link" href="#skills">{language==='EN'?'Skills':'Habilidades'}</a>
               <a className="nav-link" href="#projects">{language==='EN'?'Projects':'Proyectos'}</a>
               <a className="nav-link" href="#contact">{language==='EN'?'Contact':'Contacto'}</a>
+              <a className="nav-link" href={cv} download="Jonathan Gómez Sánchez">
+                {language==='EN'?'Cv EN':'Cv ES'}
+              </a>
         </div>
       </div>
     </nav>
