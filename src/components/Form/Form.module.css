@@ -1,0 +1,60 @@
+.container{
+    border-radius: 5px;
+    background-color: rgba(134, 96, 39, 0.9);
+    width: 45%;
+    padding-top: 30px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form input, .form textarea{
+    width: 80%;
+    border-radius: 5px;
+    margin: 7px;
+    border: 1px solid #fca311;
+    font-family: "Quicksand";
+    font-size: 18px;
+    padding: 10px;
+    background-color: #866027;
+    color: #e5e5e5;
+}
+.form textarea{
+    resize: none;
+    height: 90px;
+}
+.form textarea::placeholder, .form input::placeholder{
+    color: #e5e5e5;
+}
+.form textarea:focus, .form input:focus{
+    outline: none;
+}
+.button{
+    background-color: #fca311;
+    color: #14213d;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Quicksand";
+    font-size: 25px;
+    padding: 5px;
+    font-weight: bold;
+    margin: 7px;
+    margin-bottom: 15px;
+}
+.span{
+    font-family: "Quicksand";
+    font-size: 25px;
+    color: red;
+    text-shadow: 1px 1px black;
+}
+.spanSuccess{
+    font-family: "Quicksand";
+    font-size: 25px;
+    color: #1ea566;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+    padding: 15px;
+}

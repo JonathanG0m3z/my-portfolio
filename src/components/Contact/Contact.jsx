@@ -1,6 +1,7 @@
 import styles from './Contact.module.css';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { MdOutgoingMail } from 'react-icons/md';
+import Form from '../Form/Form';
 
 export default function Contact({language}){
     return(
@@ -26,6 +27,9 @@ export default function Contact({language}){
                         <span>Jonathan Gómez</span>
                     </a>    
                 </div>
+            </div>
+            <div className={styles.divForm}>
+                <Form language={language} />
             </div>
         </div>
     )
