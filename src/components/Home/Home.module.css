@@ -30,6 +30,28 @@
     font-weight: 100;
     font-style: italic;
 }
+@media (max-width: 1400px) {
+  .container {
+    flex-direction: column;
+  }
+  .divImg {
+    width: 50%;
+    padding-left: 25%;
+  }
+  .divImg img {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .divName {
+    width: 100%;
+  }
+  .divName h1 {
+    font-size: 50px;
+  }
+  .divName h2 {
+    font-size: 25px;
+  }
+}
 @media (max-width: 767px) {
     .container {
       flex-direction: column;
@@ -37,6 +59,7 @@
     .divImg {
       width: 100%;
       text-align: center;
+      padding-left: 0;
     }
     .divImg img {
       width: 80%;
