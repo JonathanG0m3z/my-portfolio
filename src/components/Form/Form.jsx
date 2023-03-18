@@ -21,7 +21,7 @@ export default function Form({language}){
         name: [/^[A-ZÁÉÍÓÚÑ][a-záéíóúñ]{3,}$/, setNameError],
         email: [/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, setEmailError],
         subject: [/^[A-ZÁÉÍÓÚÑ][a-záéíóúñ]{3,}$/, setSubjectError],
-        message: [/^[A-ZÁÉÍÓÚÑa-záéíóúñ\s\d\-\_\.\,\'\:\;\(\)\[\]\{\}\!\?\¡\¿]{2,}$/, setMessageError]
+        message: [/^[A-ZÁÉÍÓÚÑa-záéíóúñ\s\d\-\_\.\,\'\:\;\(\)\[\]\{\}\!\?\¡\¿]{5,}$/, setMessageError]
     };
 
     const validate = ({name, value})=>{
@@ -60,8 +60,8 @@ export default function Form({language}){
                 {subjectError?<span className={styles.span}>{language==='EN'?'The first letter must be capital and have more than 3 characters':
                                                                             'La primer letra debe ser mayúscula y tener más de 3 caracteres'}</span>:''}
                 <textarea className={messageError?styles.error:styles.valid} onChange={handleChanges} value={form.message} name="message" placeholder={language==='EN'?"Message":'Mensaje'}></textarea>
-                {messageError?<span className={styles.span}>{language==='EN'?'The first letter must be capital and have more than 5 characters':
-                                                                            'La primer letra debe ser mayúscula y tener más de 5 caracteres'}</span>:''}
+                {messageError?<span className={styles.span}>{language==='EN'?'The text must have more than 5 characters':
+                                                                            'El texto debe tener más de 5 caracteres'}</span>:''}
                 {success?<span className={styles.spanSuccess}>{language==='EN'?'Email sent successfully':'Correo enviado satisfactoriamente'}</span>:''}
                 <button className={styles.button} type="submit"
                     disabled={form.name === '' || form.email === '' || form.subject === '' || form.message === '' || nameError || emailError || subjectError || messageError}
