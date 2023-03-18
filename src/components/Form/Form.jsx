@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Form.module.css';
 import emailjs from '@emailjs/browser';
 
@@ -10,40 +10,59 @@ export default function Form({language}){
         subject: '',
         message: ''
     });
-    const [error, setError] = useState("");
     const [success, setSuccess] = useState(false);
-    const filter = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
-    const handleChanges = (event)=>{
+    const [nameError, setNameError] = useState(false);
+    const [emailError, setEmailError] = useState(false);
+    const [subjectError, setSubjectError] = useState(false);
+    const [messageError, setMessageError] = useState(false);
+
+    const dictionary = {
+        name: [/^[A-ZÁÉÍÓÚÑ][a-záéíóúñ]{3,}$/, setNameError],
+        email: [/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, setEmailError],
+        subject: [/^[A-ZÁÉÍÓÚÑ][a-záéíóúñ]{3,}$/, setSubjectError],
+        message: [/^[A-ZÁÉÍÓÚÑa-záéíóúñ\s\d\-\_\.\,\'\:\;\(\)\[\]\{\}\!\?\¡\¿]{2,}$/, setMessageError]
+    };
+
+    const validate = ({name, value})=>{
+        const isValid = !dictionary[name][0].test(value);
+        dictionary[name][1](isValid);
+    }
+
+    const handleChanges = ({target})=>{
         setForm({
           ...form,
-            [event.target.name]: event.target.value
-        })
+            [target.name]: target.value
+        });
+        validate(target);
     };
     const handleSubmit = (event)=>{
         event.preventDefault();
-        if(form.name === '' || form.email === '' || form.subject === '' || form.message === '') setError(language==='EN'?"Complete the information please":"Complete la información por favor");
-        else if(!filter.test(form.email)) setError(language==='EN'?"Please enter a valid email address":"El correo ingresado no es valido");
-        else {
-            setError('');
-            emailjs.sendForm(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, event.target, REACT_APP_PUBLIC_KEY)
-            .then(() => {
-                setSuccess(true);
-            }, (err) => {
-                alert(JSON.stringify(err));
-            });
-        }
+        emailjs.sendForm(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, event.target, REACT_APP_PUBLIC_KEY)
+        .then(() => {
+            setSuccess(true);
+        }, (err) => {
+            alert(JSON.stringify(err));
+        });
     };
+
+    useEffect(()=>{},[form]);
+
     return(
         <div className={styles.container}>
             <form onSubmit={handleSubmit} className={styles.form} >
-                {error.length?<span className={styles.span}>{error}</span>:''}
-                <input onChange={handleChanges} value={form.name} type="text" name="name" placeholder={language==='EN'?'Name':'Nombre'}/>
-                <input onChange={handleChanges} value={form.email} type="text" name="email" placeholder={language==='EN'?"Email":'Correo electrónico'}/>
-                <input onChange={handleChanges} value={form.subject} type="text" name="subject" placeholder={language==='EN'?"Subject":'Asunto'}/>
-                <textarea onChange={handleChanges} value={form.message} name="message" placeholder={language==='EN'?"Message":'Mensaje'}></textarea>
+                <input className={nameError?styles.error:styles.valid} onChange={handleChanges} value={form.name} type="text" name="name" placeholder={language==='EN'?'Name':'Nombre'}/>
+                {nameError?<span className={styles.span}>The first letter must be capital and have more than 3 characters</span>:''}
+                <input className={emailError?styles.error:styles.valid} onChange={handleChanges} value={form.email} type="text" name="email" placeholder={language==='EN'?"Email":'Correo electrónico'}/>
+                {emailError?<span className={styles.span}>Invalid email</span>:''}
+                <input className={subjectError?styles.error:styles.valid} onChange={handleChanges} value={form.subject} type="text" name="subject" placeholder={language==='EN'?"Subject":'Asunto'}/>
+                {subjectError?<span className={styles.span}>The first letter must be capital and have more than 3 characters</span>:''}
+                <textarea className={messageError?styles.error:styles.valid} onChange={handleChanges} value={form.message} name="message" placeholder={language==='EN'?"Message":'Mensaje'}></textarea>
+                {messageError?<span className={styles.span}>The first letter must be capital and have more than 5 characters</span>:''}
                 {success?<span className={styles.spanSuccess}>{language==='EN'?'Email sent satisfactorily':'Correo enviado satisfactoriamente'}</span>:''}
-                <button className={styles.button} type="submit">{language==='EN'?'Send':'Enviar'}</button>
+                <button className={styles.button} type="submit"
+                    disabled={form.name === '' || form.email === '' || form.subject === '' || form.message === '' || nameError || emailError || subjectError || messageError}
+                >{language==='EN'?'Send':'Enviar'}</button>
             </form>
         </div>
     )
