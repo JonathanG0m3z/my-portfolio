@@ -51,14 +51,17 @@ export default function Form({language}){
     return(
         <div className={styles.container}>
             <form onSubmit={handleSubmit} className={styles.form} >
-                <input className={nameError?styles.error:styles.valid} onChange={handleChanges} value={form.name} type="text" name="name" placeholder={language==='EN'?'Name':'Nombre'}/>
-                {nameError?<span className={styles.span}>The first letter must be capital and have more than 3 characters</span>:''}
+                <input autoComplete='off' className={nameError?styles.error:styles.valid} onChange={handleChanges} value={form.name} type="text" name="name" placeholder={language==='EN'?'Name':'Nombre'}/>
+                {nameError?<span className={styles.span}>{language==='EN'?'The first letter must be capital and have more than 3 characters':
+                                                                            'La primer letra debe ser mayúscula y tener más de tres caracteres'}</span>:''}
                 <input className={emailError?styles.error:styles.valid} onChange={handleChanges} value={form.email} type="text" name="email" placeholder={language==='EN'?"Email":'Correo electrónico'}/>
-                {emailError?<span className={styles.span}>Invalid email</span>:''}
-                <input className={subjectError?styles.error:styles.valid} onChange={handleChanges} value={form.subject} type="text" name="subject" placeholder={language==='EN'?"Subject":'Asunto'}/>
-                {subjectError?<span className={styles.span}>The first letter must be capital and have more than 3 characters</span>:''}
+                {emailError?<span className={styles.span}>{language==='EN'?'Invalid email':'Correo electrónico inválido'}</span>:''}
+                <input autoComplete='off' className={subjectError?styles.error:styles.valid} onChange={handleChanges} value={form.subject} type="text" name="subject" placeholder={language==='EN'?"Subject":'Asunto'}/>
+                {subjectError?<span className={styles.span}>{language==='EN'?'The first letter must be capital and have more than 3 characters':
+                                                                            'La primer letra debe ser mayúscula y tener más de 3 caracteres'}</span>:''}
                 <textarea className={messageError?styles.error:styles.valid} onChange={handleChanges} value={form.message} name="message" placeholder={language==='EN'?"Message":'Mensaje'}></textarea>
-                {messageError?<span className={styles.span}>The first letter must be capital and have more than 5 characters</span>:''}
+                {messageError?<span className={styles.span}>{language==='EN'?'The first letter must be capital and have more than 5 characters':
+                                                                            'La primer letra debe ser mayúscula y tener más de 5 caracteres'}</span>:''}
                 {success?<span className={styles.spanSuccess}>{language==='EN'?'Email sent successfully':'Correo enviado satisfactoriamente'}</span>:''}
                 <button className={styles.button} type="submit"
                     disabled={form.name === '' || form.email === '' || form.subject === '' || form.message === '' || nameError || emailError || subjectError || messageError}

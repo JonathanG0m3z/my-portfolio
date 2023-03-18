@@ -11,6 +11,8 @@
     border-radius: 4px;
     backdrop-filter: blur(1px);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .card:hover{
     backdrop-filter: blur(2px);
@@ -36,4 +38,5 @@
     display: flex;
     justify-content: space-around;
     padding-bottom: 10px;
+    margin-top: auto;
 }

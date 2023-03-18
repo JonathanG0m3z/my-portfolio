@@ -1,6 +1,6 @@
 import styles from './Project.module.css';
-import {BsFileCodeFill} from 'react-icons/bs';
-import {SiNetlify} from 'react-icons/si';
+import {FaGithubSquare} from 'react-icons/fa';
+import {SiReact} from 'react-icons/si';
 
 export default function Project({name, src, code, deploy}){
     return(
@@ -10,10 +10,10 @@ export default function Project({name, src, code, deploy}){
                 <img src={src} alt="" />
                 <div className={styles.divIcons}>
                     <a href={code} target="_blank">
-                        <BsFileCodeFill className={styles.icon} />
+                        <FaGithubSquare className={styles.icon} />
                     </a>
                     <a href={deploy} target="_blank">
-                        <SiNetlify className={styles.icon} />
+                        <SiReact className={styles.icon} />
                     </a>
                 </div>
             </div>

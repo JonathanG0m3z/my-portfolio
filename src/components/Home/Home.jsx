@@ -1,5 +1,5 @@
 import styles from './Home.module.css';
-import me from '../../img/me.jfif';
+import me from '../../img/me.jpeg';
 
 export default function Home({language}){
     return(
@@ -15,8 +15,8 @@ export default function Home({language}){
               <a name='about'></a>  
               <h2>{language==='EN'?'Full stack web developer':'Desarrollador web full stack'}</h2>
               <div className={styles.about}>
-                <p>{language==='EN'?'Hello there! I am a web developer and mechatronic engineer from Manizales, Colombia. I currently work as teaching assistant at Henry, where I am in charge of coordinate a group of new students throughout the whole bootcamp experience. I have worked on a few occasions in small web development teams before but I would like to collaborate with many more developers in order to contribute and learn much more from this great world of programming.':
-                '¡Hola a todos! Soy un desarrollador web e ingeniero mecatrónico de Manizales, Colombia. Actualmente trabajo como teaching assistant (TA) en Henry, donde me encargo de coordinar un grupo de nuevos estudiantes a travez de todo el bootcamp. He trabajado en varias ocaciones en pequeños equipos de desarrollo pero me gustaría colaborar con más desarrolladores para contribuir y aprender muchísimo más sobre este gran mundo de la programación.'}
+                <p>{language==='EN'?"Hello there! I'm a full stack web developer and mechatronic engineer from Líbano Tolima. Throughout my career, I have had the opportunity to work in different development groups, in which I learned and contributed as much as possible. I've been programming since I was 14 years old and professionally in web development for a year and a half. If you have any questions, you can contact me through any of the means that I make available to you.":
+                                    '¡Hola a todos! Soy un desarrollador web full stack e ingeniero mecatrónico del Líbano Tolima. A lo largo de mi carrera he tenido la oportunidad de trabajar en diferentes grupos de desarrollo, en los cuales aprendí y aporté tanto como me fue posible. Programo desde los 14 años y profesionalmente en el desarrollo web llevo año y medio. Si tienes alguna duda o consulta puedes contactarme por cualquiera de los medios que dejo a tu disposición.'}
                 </p>
             </div>  
             </div>

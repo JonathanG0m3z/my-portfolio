@@ -11,11 +11,12 @@ import Git from '../../img/git.png';
 import MySql from '../../img/mysql.png';
 import PHP from '../../img/php.png';
 import Node from '../../img/node.png';
-import Sequelize from '../../img/sequelize.png';
+// import Sequelize from '../../img/sequelize.png';
+import MongoDB from '../../img/mongodb.png';
 
 export default function Skills({language}){
-    const list = ['HTML', 'CSS', 'Javascript', 'React', 'Redux', 'Express', 'Postgres', 'Git', 'MySql','PHP', 'Node', 'Sequelize'];
-    const skills ={HTML, CSS, Javascript, React, Redux, Express, Postgres, Git, MySql, PHP, Node, Sequelize}
+    const list = ['HTML', 'CSS', 'Javascript', 'React', 'Redux', 'Express', 'Postgres', 'Git', 'MySql','PHP', 'Node', 'MongoDB'];
+    const skills ={HTML, CSS, Javascript, React, Redux, Express, Postgres, Git, MySql, PHP, Node, MongoDB}
     return(
         <div className={styles.container}>
             <a name="skills"></a>
