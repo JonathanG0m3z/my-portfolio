@@ -59,7 +59,7 @@ export default function Form({language}){
                 {subjectError?<span className={styles.span}>The first letter must be capital and have more than 3 characters</span>:''}
                 <textarea className={messageError?styles.error:styles.valid} onChange={handleChanges} value={form.message} name="message" placeholder={language==='EN'?"Message":'Mensaje'}></textarea>
                 {messageError?<span className={styles.span}>The first letter must be capital and have more than 5 characters</span>:''}
-                {success?<span className={styles.spanSuccess}>{language==='EN'?'Email sent satisfactorily':'Correo enviado satisfactoriamente'}</span>:''}
+                {success?<span className={styles.spanSuccess}>{language==='EN'?'Email sent successfully':'Correo enviado satisfactoriamente'}</span>:''}
                 <button className={styles.button} type="submit"
                     disabled={form.name === '' || form.email === '' || form.subject === '' || form.message === '' || nameError || emailError || subjectError || messageError}
                 >{language==='EN'?'Send':'Enviar'}</button>
