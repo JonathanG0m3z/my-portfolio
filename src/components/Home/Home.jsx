@@ -1,5 +1,5 @@
 import styles from './Home.module.css';
-import me from '../../img/me.jpeg';
+import me from '../../img/me.png';
 
 export default function Home({language}){
     return(
